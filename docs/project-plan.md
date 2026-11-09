@@ -11,7 +11,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-09 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version for the Day 61 Flask Secrets project | pending |
+| 2026-11-09 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version for the Day 61 Flask Secrets project | [1c70baa] |
 
 ---
 
@@ -86,3 +86,4 @@ A No-Go on a gateway stops the later ones until it is fixed and re-reviewed. The
 [MIL-003]: ./milestones/mil-003-validation-and-login-check.md
 [MIL-004]: ./milestones/mil-004-templates-and-bootstrap.md
 [MIL-005]: ./milestones/mil-005-wiki-and-release.md
+[1c70baa]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/1c70baa4fb513f9e44d476b27cc62631251ab0d3

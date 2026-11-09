@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-09 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-09 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [1c70baa] |
 
 ---
 
@@ -69,3 +69,4 @@ No use cases, design artifacts or test plans exist: the lecture tasks are plain 
 [RC-006]: ./reviews/rc-006-mil-003-validation-and-login-check.md
 [RC-007]: ./reviews/rc-007-mil-004-templates-and-bootstrap.md
 [RC-008]: ./reviews/rc-008-mil-005-wiki-and-release.md
+[1c70baa]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/1c70baa4fb513f9e44d476b27cc62631251ab0d3
