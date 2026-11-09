@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-09 | Proposed | <author> | AI as stand-in for S01 | Code review of MIL-004 | pending |
+| 2026-11-09 | Proposed | <author> | AI as stand-in for S01 | Code review of MIL-004 | [31ce99b] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — All Mandatory criteria pass.
 
 [MIL-004]: ../../milestones/mil-004-templates-and-bootstrap.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[31ce99b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/31ce99b6898e756b783980896868606026c074a9
