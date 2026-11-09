@@ -23,7 +23,7 @@ dev = ["pytest", "ruff", "mypy"]
 where = ["src"]
 
 [tool.setuptools.package-data]
-flask_secrets = ["templates/*.html"]
+flask_secrets = ["presentation/templates/*.html"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
