@@ -1,5 +1,4 @@
-## @file constants.py
-#  @brief Every constant of the project lives in this module.
+"""@brief Every constant of the project lives in this module."""
 
 ## @brief Name shown in page titles.
 APP_NAME: str = "Flask Secrets"
