@@ -66,3 +66,27 @@ def test_empty_submit_shows_required_errors(client: FlaskClient) -> None:
     client.application.config["WTF_CSRF_ENABLED"] = False
     html = client.post("/login", data={}).get_data(as_text=True)
     assert html.count("This field is required.") == 2
+
+
+def test_email_without_at_sign_is_rejected(client: FlaskClient) -> None:
+    """@brief An email without @ shows the invalid email error."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "admin.email.com", "password": "12345678"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "Invalid email address." in html
+
+
+def test_short_password_is_rejected(client: FlaskClient) -> None:
+    """@brief A password of 4 characters shows the minimum length error."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "admin@email.com", "password": "1234"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "Field must be at least 8 characters long." in html
+
+
+def test_valid_input_shows_no_validation_error(client: FlaskClient) -> None:
+    """@brief A valid email and an 8 character password show no error."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "admin@email.com", "password": "12345678"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "color: red" not in html
