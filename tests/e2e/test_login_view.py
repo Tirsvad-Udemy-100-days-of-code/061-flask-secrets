@@ -47,7 +47,7 @@ def test_password_input_hides_typed_text(client: FlaskClient) -> None:
 def test_form_action_is_built_with_url_for(client: FlaskClient) -> None:
     """@brief The form posts to the URL of the login endpoint."""
     html = client.get("/login").get_data(as_text=True)
-    assert '<form action="/login" method="post" novalidate>' in html
+    assert '<form action="/login" method="post"' in html
 
 
 def test_submit_button_uses_its_label(client: FlaskClient) -> None:
@@ -134,3 +134,19 @@ def test_pages_load_bootstrap_css(client: FlaskClient) -> None:
     ]
     for response in pages:
         assert "bootstrap" in response.get_data(as_text=True)
+
+
+def test_render_form_builds_a_bootstrap_form(client: FlaskClient) -> None:
+    """@brief render_form produces Bootstrap form controls and keeps the CSRF token."""
+    html = client.get("/login").get_data(as_text=True)
+    assert 'class="form-control"' in html
+    assert 'name="csrf_token"' in html
+    assert "novalidate" in html
+
+
+def test_render_form_shows_validation_errors(client: FlaskClient) -> None:
+    """@brief Errors found by the validators appear in the rendered form."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "admin.email.com", "password": "1234"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "Invalid email address." in html

@@ -117,5 +117,22 @@
   {
     "name": "step-09-bootstrap-home",
     "path": "/"
+  },
+  {
+    "name": "step-10-render-form",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "admin.email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "1234"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
   }
 ]
