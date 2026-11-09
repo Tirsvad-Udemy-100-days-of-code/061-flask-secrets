@@ -6,11 +6,21 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form action="/login" method="post">
+    <form action="{{ url_for('login') }}" method="post">
         {{ form.csrf_token }}
-        {{ form.email.label }} {{ form.email(size=input_size) }}
-        {{ form.password.label }} {{ form.password(size=input_size) }}
-        <input type="submit" value="Log In">
+        <table>
+            <tr>
+                <td>{{ form.email.label }}</td>
+                <td>{{ form.email(size=input_size) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label }}</td>
+                <td>{{ form.password(size=input_size) }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{ form.submit() }}</td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

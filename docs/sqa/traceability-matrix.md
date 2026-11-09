@@ -27,7 +27,7 @@ updated whenever an artifact instance is created or reviewed.
 | [SA-001] | Stakeholder Analysis | en | it | [BC-001] | [PP-001] | [RC-002] |
 | [PP-001] | Project Plan | en | it | [BC-001], [SA-001] | MIL-001 to MIL-005 | [RC-003] |
 | [MIL-001] | Milestone | en | it | [PP-001] | tasks of MIL-001 | [RC-004], [RC-009] |
-| [MIL-002] | Milestone | en | it | [PP-001] | tasks of MIL-002 | [RC-005] |
+| [MIL-002] | Milestone | en | it | [PP-001] | tasks of MIL-002 | [RC-005], [RC-010] |
 | [MIL-003] | Milestone | en | it | [PP-001] | tasks of MIL-003 | [RC-006] |
 | [MIL-004] | Milestone | en | it | [PP-001] | tasks of MIL-004 | [RC-007] |
 | [MIL-005] | Milestone | en | it | [PP-001] | tasks of MIL-005 | [RC-008] |
@@ -71,3 +71,4 @@ No use cases, design artifacts or test plans exist: the lecture tasks are plain 
 [RC-008]: ./reviews/rc-008-mil-005-wiki-and-release.md
 [1c70baa]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/1c70baa4fb513f9e44d476b27cc62631251ab0d3
 [RC-009]: ./reviews/rc-009-mil-001-code.md
+[RC-010]: ./reviews/rc-010-mil-002-code.md

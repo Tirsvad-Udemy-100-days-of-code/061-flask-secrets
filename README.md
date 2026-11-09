@@ -21,11 +21,27 @@ The site asks for an email and a password. The demo account of the lecture (`adm
 
 | Folder | Purpose |
 | --- | --- |
-| `src/flask_secrets/` | The application: routes `home` and `login`, the `LoginForm`, templates and `constants.py` |
+| `src/flask_secrets/` | The application: `constants.py`, and the `presentation` layer with the routes `home` and `login`, the `LoginForm` and the templates |
 | `tests/` | pytest tests |
 | `docs/` | Project documents, screenshots (`docs/images/`) and the plan |
 
 The wiki explains what each lecture step taught, in English, Danish and Bahasa Malaysia.
+
+### Lecture steps
+
+Every screenshot is taken in a Docker container by `scripts/capture_screenshot.sh`, so it never uses the host desktop.
+
+**Step 1: the login route.** A route named `login` renders `login.html`.
+
+![Step 1: the login route](./docs/images/step-01-login-route.png)
+
+**Step 2: a login form with Flask-WTF.** `LoginForm` has an email and a password field of size 30 and a CSRF token.
+
+![Step 2: the Flask-WTF form](./docs/images/step-02-flask-wtf-form.png)
+
+**Step 3: five code improvements.** A `PasswordField` hides the typed text, labels use the `label` keyword, the form action uses `url_for`, a table lays out the fields and a `SubmitField` renders the button.
+
+![Step 3: code improvements](./docs/images/step-03-code-improvements.png)
 
 ## 📋 Requirements
 
@@ -59,7 +75,7 @@ python -m pip install -e ".[dev]"
 ## ▶️ Run
 
 ```bash
-python -m flask_secrets.main
+python -m flask_secrets.presentation.main
 ```
 
 Open http://127.0.0.1:5000/ in a browser. Set the `SECRET_KEY` environment variable to use your own CSRF key.

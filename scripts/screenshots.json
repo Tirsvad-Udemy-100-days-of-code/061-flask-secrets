@@ -6,5 +6,9 @@
   {
     "name": "step-02-flask-wtf-form",
     "path": "/login"
+  },
+  {
+    "name": "step-03-code-improvements",
+    "path": "/login"
   }
 ]
