@@ -10,5 +10,14 @@
   {
     "name": "step-03-code-improvements",
     "path": "/login"
+  },
+  {
+    "name": "step-04-required-validation",
+    "path": "/login",
+    "actions": [
+      {
+        "click": "#submit"
+      }
+    ]
   }
 ]

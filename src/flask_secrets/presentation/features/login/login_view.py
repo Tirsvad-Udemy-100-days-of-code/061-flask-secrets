@@ -15,11 +15,12 @@ def home() -> str:
 
 
 def login() -> str:
-    """@brief Render the login page with its Flask-WTF form (lecture step 2).
+    """@brief Show the login form and validate what the user submits (step 4).
 
-    @return The HTML of login.html.
+    @return The HTML of login.html, with validation errors after a failed submit.
     """
     form = LoginForm()
+    form.validate_on_submit()
     return render_template("login.html", form=form, input_size=INPUT_SIZE)
 
 
@@ -29,4 +30,6 @@ def register_routes(app: Flask) -> None:
     @param app The Flask application to extend.
     """
     app.add_url_rule("/", endpoint="home", view_func=home)
-    app.add_url_rule("/login", endpoint="login", view_func=login)
+    app.add_url_rule(
+        "/login", endpoint="login", view_func=login, methods=["GET", "POST"]
+    )

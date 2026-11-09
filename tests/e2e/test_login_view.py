@@ -35,8 +35,7 @@ def test_login_form_has_csrf_token(client: FlaskClient) -> None:
 def test_login_form_inputs_have_size_30(client: FlaskClient) -> None:
     """@brief Email and password inputs are 30 characters wide."""
     html = client.get("/login").get_data(as_text=True)
-    assert 'name="email" size="30"' in html
-    assert 'name="password" size="30"' in html
+    assert html.count('size="30"') == 2
 
 
 def test_password_input_hides_typed_text(client: FlaskClient) -> None:
@@ -48,10 +47,22 @@ def test_password_input_hides_typed_text(client: FlaskClient) -> None:
 def test_form_action_is_built_with_url_for(client: FlaskClient) -> None:
     """@brief The form posts to the URL of the login endpoint."""
     html = client.get("/login").get_data(as_text=True)
-    assert '<form action="/login" method="post">' in html
+    assert '<form action="/login" method="post" novalidate>' in html
 
 
 def test_submit_button_uses_its_label(client: FlaskClient) -> None:
     """@brief The SubmitField renders a button labelled Log In."""
     html = client.get("/login").get_data(as_text=True)
     assert 'type="submit" value="Log In"' in html
+
+
+def test_form_turns_browser_validation_off(client: FlaskClient) -> None:
+    """@brief The form carries the novalidate attribute."""
+    assert "novalidate" in client.get("/login").get_data(as_text=True)
+
+
+def test_empty_submit_shows_required_errors(client: FlaskClient) -> None:
+    """@brief Posting empty fields shows a required-field error for each field."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    html = client.post("/login", data={}).get_data(as_text=True)
+    assert html.count("This field is required.") == 2

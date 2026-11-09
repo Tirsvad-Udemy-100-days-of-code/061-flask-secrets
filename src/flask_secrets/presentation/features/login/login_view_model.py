@@ -2,11 +2,12 @@
 
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, SubmitField
+from wtforms.validators import DataRequired
 
 
 class LoginForm(FlaskForm):  # type: ignore[misc]
-    """@brief The login form (lecture steps 2 and 3)."""
+    """@brief The login form (lecture steps 2 to 4)."""
 
-    email = StringField(label="Email")
-    password = PasswordField(label="Password")
+    email = StringField(label="Email", validators=[DataRequired()])
+    password = PasswordField(label="Password", validators=[DataRequired()])
     submit = SubmitField(label="Log In")
