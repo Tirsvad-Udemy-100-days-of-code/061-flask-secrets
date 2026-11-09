@@ -1,3 +1,10 @@
 [
-  {"name": "step-01-login-route", "path": "/login"}
+  {
+    "name": "step-01-login-route",
+    "path": "/login"
+  },
+  {
+    "name": "step-02-flask-wtf-form",
+    "path": "/login"
+  }
 ]

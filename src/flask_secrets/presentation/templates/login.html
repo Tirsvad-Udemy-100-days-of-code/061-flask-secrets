@@ -6,11 +6,10 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form method="post">
-        <label>Email</label>
-        <input type="text" name="email">
-        <label>Password</label>
-        <input type="password" name="password">
+    <form action="/login" method="post">
+        {{ form.csrf_token }}
+        {{ form.email.label }} {{ form.email(size=input_size) }}
+        {{ form.password.label }} {{ form.password(size=input_size) }}
         <input type="submit" value="Log In">
     </form>
 </body>

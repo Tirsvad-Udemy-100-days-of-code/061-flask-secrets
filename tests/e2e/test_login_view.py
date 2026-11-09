@@ -24,3 +24,16 @@ def test_login_route_renders_login_page(client: FlaskClient) -> None:
     response = client.get("/login")
     assert response.status_code == 200
     assert b"<h1>Login</h1>" in response.data
+
+
+def test_login_form_has_csrf_token(client: FlaskClient) -> None:
+    """@brief The form carries a hidden CSRF token."""
+    response = client.get("/login")
+    assert b'name="csrf_token"' in response.data
+
+
+def test_login_form_inputs_have_size_30(client: FlaskClient) -> None:
+    """@brief Email and password inputs are 30 characters wide."""
+    html = client.get("/login").get_data(as_text=True)
+    assert 'name="email" size="30"' in html
+    assert 'name="password" size="30"' in html

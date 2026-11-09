@@ -2,6 +2,9 @@
 
 from flask import Flask, render_template
 
+from flask_secrets.constants import INPUT_SIZE
+from flask_secrets.presentation.features.login.login_view_model import LoginForm
+
 
 def home() -> str:
     """@brief Render the home page.
@@ -12,11 +15,12 @@ def home() -> str:
 
 
 def login() -> str:
-    """@brief Render the login page (lecture step 1).
+    """@brief Render the login page with its Flask-WTF form (lecture step 2).
 
     @return The HTML of login.html.
     """
-    return render_template("login.html")
+    form = LoginForm()
+    return render_template("login.html", form=form, input_size=INPUT_SIZE)
 
 
 def register_routes(app: Flask) -> None:
