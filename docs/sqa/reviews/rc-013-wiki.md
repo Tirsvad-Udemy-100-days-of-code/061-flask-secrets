@@ -10,7 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Review of the project wiki | [733a36b] |
-| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Recorded the check of the published wiki (criterion 14) | pending |
+| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Recorded the check of the published wiki (criterion 14) | [bfce620] |
 
 ---
 
@@ -75,3 +75,4 @@ Go-with-conditions: all Mandatory structure criteria pass. Criterion 14 was chec
 [QC-WIKI-001]: ../../../framework/qc/artifacts/qc-wiki.md
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
 [733a36b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/733a36b1aceaf0574be7062bba541a75c7677c2b
+[bfce620]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/bfce620034c5b0a279343ef81de33b4c819e0787
