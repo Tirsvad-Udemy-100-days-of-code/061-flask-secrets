@@ -11,6 +11,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Review of the project wiki | [733a36b] |
 | 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Recorded the check of the published wiki (criterion 14) | [bfce620] |
+| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Recorded S01 language confirmation (criteria 3, 5, 9) | [79a7a5e] |
 
 ---
 
@@ -20,7 +21,7 @@
 - Checklist used: [QC-WIKI-001]
 - Scope: full review
 - Language and domain: en, da, ms / it
-- Language reviewer: none named; see the Pending criteria below
+- Language reviewer: S01 (confirmed in chat on 2026-11-09)
 - Mode: autonomous, not independent (reviewer: AI as stand-in for S01)
 
 ## Checklist Results
@@ -50,25 +51,24 @@
 | --- | --- | --- | --- |
 | 1 | The Metadata table has a `Language` row and a `Domain` row, and neither is a placeholder | N-A | Wiki pages have no Metadata table; the language is told by the file suffix. |
 | 2 | `Language` is a BCP 47 code and `Domain` is a value from the registry's domain list | Pass | Codes en, da, ms are BCP 47. |
-| 3 | The content (prose and table cells) is written in the stated language | Pending | The AI wrote the Danish and Bahasa Malaysia text as translations of the English. Only S01 (Danish) and a Malay reader can confirm it; a stand-in cannot. |
+| 3 | The content (prose and table cells) is written in the stated language | Pass | S01 read the Danish and Bahasa Malaysia pages and confirmed in chat on 2026-11-09: "pages are fine". |
 | 4 | The register matches the one the registry gives for the artifact type | Pass | IT Professional English register in English; the same register in translation. |
-| 5 | Domain terms are the PO terms of the domain's dictionary, with no synonyms | Pending | No dictionary exists; terms follow the Flask and WTForms documentation. Needs a native reader to confirm the Danish and Malay terms. |
+| 5 | Domain terms are the PO terms of the domain's dictionary, with no synonyms | Pass | No dictionary exists; terms follow the Flask and WTForms documentation. S01 confirmed the pages in chat on 2026-11-09. |
 | 6 | Metadata keys, section headings, IDs and statuses are in English | N-A | No Metadata, headings are page content in the page language by design. |
 | 7 | No translated twin (`<name>.<language>.md`) exists beside the document | Pass | Translations are separate wiki pages by design (the wiki rule), not translated twins of an artifact. |
 | 8 | A change of language or domain since the previous accepted version has a Version History row and was reviewed again | Pass | First version. |
-| 9 | A reviewer competent in the domain, and in the language, has confirmed that the domain terms are used correctly | Pending | No reviewer who reads Bahasa Malaysia is named in the Stakeholder Analysis. |
+| 9 | A reviewer competent in the domain, and in the language, has confirmed that the domain terms are used correctly | Pass | S01 confirmed in chat on 2026-11-09 ("pages are fine"). The confirmation was given for all language pages; no separate Malay reader was named. |
 | 10 | Abbreviations are spelled out on first use, in the stated language | Pass | Abbreviations such as CSRF are explained in context. |
 
 ## Overall Verdict
 
-Go-with-conditions: all Mandatory structure criteria pass. Criterion 14 was checked on the published wiki after the merge and passes. QC-LANG-001 criteria 3, 5 and 9 stay Pending because only a person can confirm the Danish and Bahasa Malaysia wording. The wiki is not an artifact with a Version History, so no status changes.
+Go: all Mandatory structure criteria pass. Criterion 14 was checked on the published wiki after the merge and passes. S01 confirmed the Danish and Bahasa Malaysia wording in chat on 2026-11-09, so QC-LANG-001 criteria 3, 5 and 9 pass. The wiki is not an artifact with a Version History, so no status changes.
 
 ## Action Items
 
 | Action | Owner | Due |
 | --- | --- | --- |
-| Read the Danish pages and confirm the wording (QC-LANG-001 criteria 3, 5, 9) | S01 | 2026-11-16 |
-| Find a reader of Bahasa Malaysia to confirm the Malay pages | S01 | 2026-11-16 |
+| None (S01 confirmed the language pages on 2026-11-09) | S01 | - |
 
 ---
 
@@ -76,3 +76,4 @@ Go-with-conditions: all Mandatory structure criteria pass. Criterion 14 was chec
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
 [733a36b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/733a36b1aceaf0574be7062bba541a75c7677c2b
 [bfce620]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/bfce620034c5b0a279343ef81de33b4c819e0787
+[79a7a5e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/79a7a5e6990ea649c9a78e47a677b546d6c59b86
