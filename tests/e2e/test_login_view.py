@@ -106,3 +106,16 @@ def test_other_credentials_see_access_denied(client: FlaskClient) -> None:
     data = {"email": "user@email.com", "password": "87654321"}
     html = client.post("/login", data=data).get_data(as_text=True)
     assert "<h1>Access Denied</h1>" in html
+
+
+def test_result_pages_extend_the_base_template(client: FlaskClient) -> None:
+    """@brief Success and denied pages take their title from their own block."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    good = {"email": "admin@email.com", "password": "12345678"}
+    bad = {"email": "user@email.com", "password": "87654321"}
+    assert "<title>Success</title>" in client.post("/login", data=good).get_data(
+        as_text=True
+    )
+    assert "<title>Access Denied</title>" in client.post("/login", data=bad).get_data(
+        as_text=True
+    )

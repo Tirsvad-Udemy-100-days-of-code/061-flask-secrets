@@ -70,5 +70,22 @@
         "click": "#submit"
       }
     ]
+  },
+  {
+    "name": "step-07-base-template",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "admin@email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "12345678"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
   }
 ]
