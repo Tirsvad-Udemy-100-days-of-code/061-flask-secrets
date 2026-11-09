@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Code review of MIL-002 | pending |
+| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Code review of MIL-002 | [1239202] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — All Mandatory criteria pass.
 
 [MIL-002]: ../../milestones/mil-002-login-form.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[1239202]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/12392020bd4bc546f6abb5069e43a9d725023df3
