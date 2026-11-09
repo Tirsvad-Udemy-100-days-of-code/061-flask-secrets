@@ -119,3 +119,21 @@ def test_result_pages_extend_the_base_template(client: FlaskClient) -> None:
     assert "<title>Access Denied</title>" in client.post("/login", data=bad).get_data(
         as_text=True
     )
+
+
+def test_denied_page_extends_the_styling_with_super(client: FlaskClient) -> None:
+    """@brief The denied page keeps the base styling and adds a red heading."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "user@email.com", "password": "87654321"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "background: purple;" in html
+    assert "color: red;" in html
+
+
+def test_success_page_has_the_base_styling_only(client: FlaskClient) -> None:
+    """@brief The success page uses the purple base styling without the red heading."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "admin@email.com", "password": "12345678"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "background: purple;" in html
+    assert "color: red;" not in html

@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Access Denied{% endblock %}
+{% block styling %}
+{{ super() }}
+h1 {
+    color: red;
+}
+{% endblock %}
 {% block content %}
 <h1>Access Denied</h1>
-<p>Wrong email or password. <a href="{{ url_for('login') }}">Try again</a>.</p>
+<p>Wrong email or password. <a style="color: white;" href="{{ url_for('login') }}">Try again</a>.</p>
 {% endblock %}

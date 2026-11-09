@@ -87,5 +87,22 @@
         "click": "#submit"
       }
     ]
+  },
+  {
+    "name": "step-08-super-block",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "user@email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "87654321"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
   }
 ]
