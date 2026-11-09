@@ -9,7 +9,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-09 | Proposed | <author> | AI as stand-in for S01 | Review of the project wiki | [733a36b] |
+| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Review of the project wiki | [733a36b] |
+| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Recorded the check of the published wiki (criterion 14) | pending |
 
 ---
 
@@ -34,6 +35,14 @@
 | 6 | The sidebar does not repeat the page list per language | Pass | The page list appears once. |
 | 7 | A sidebar produced by a generator carries a comment that says so and names the generator; the generator is changed, not the page | N-A | The sidebar is written by hand, not generated. |
 | 8 | The wiki has a `Languages` line on each page (criterion 11), so the sidebar is not the only way to switch language | Pass | Every page has the language line. |
+| 9 | Every wiki exists in English and, as a minimum, in the language the project's registry names as the PO language; further languages are added on top, never instead of English | Pass | English is the PO language; Danish and Bahasa Malaysia are added on top. |
+| 10 | Every English page has a page in each other language of the wiki: the page sets are identical | Pass | 11 English pages, 11 Danish pages (-da) and 11 Bahasa Malaysia pages (-ms). |
+| 11 | Every page starts with the language line, with the current language in bold and a link to the same page in each other language | Pass | Every page starts with the language line with the current language in bold. |
+| 12 | A page in a language other than English is named `<Page>-<code>.md`, with a BCP 47 code; English has no suffix | Pass | Suffixes -da and -ms (BCP 47); English has no suffix. |
+| 13 | Code blocks, commands, file names and IDs stay in English in every language | Pass | Code blocks, commands, file names are English in all languages. |
+| 14 | The sidebar, every page and every link were checked on the published wiki after the change, not only in the repository | Pass | After the merge the workflow publish-wiki-pages succeeded; on 2026-11-09 all 33 wiki pages answered HTTP 200 on the host, the sidebar and Home list the pages and the Languages section, and the step screenshots load. Recorded by the AI as a tool check. |
+| 15 | A change to the layout rules (sections, order, naming) is made in the generator or template and in this checklist's source rules together | N-A | No generator is used. |
+| 16 | The wiki folder (`docs/wiki/`) is flat: every page, `Home.md` and `_Sidebar.md` included, is directly in it, and languages are told apart by file name, never by a subfolder | Pass | All 34 files are directly in docs/wiki/, no subfolder. |
 
 ## Language and Domain Results
 
@@ -52,13 +61,12 @@
 
 ## Overall Verdict
 
-Go-with-conditions: all Mandatory structure criteria pass. Criterion 14 and QC-LANG-001 criteria 3, 5 and 9 are Pending because only a person can confirm them (the published wiki after the merge, and the Danish and Bahasa Malaysia wording). The wiki is not an artifact with a Version History, so no status changes.
+Go-with-conditions: all Mandatory structure criteria pass. Criterion 14 was checked on the published wiki after the merge and passes. QC-LANG-001 criteria 3, 5 and 9 stay Pending because only a person can confirm the Danish and Bahasa Malaysia wording. The wiki is not an artifact with a Version History, so no status changes.
 
 ## Action Items
 
 | Action | Owner | Due |
 | --- | --- | --- |
-| Check the published wiki sidebar and every link after the merge (criterion 14) | S01 | 2026-11-16 |
 | Read the Danish pages and confirm the wording (QC-LANG-001 criteria 3, 5, 9) | S01 | 2026-11-16 |
 | Find a reader of Bahasa Malaysia to confirm the Malay pages | S01 | 2026-11-16 |
 
