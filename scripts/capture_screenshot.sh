@@ -11,4 +11,4 @@ docker run --rm \
   -v "$root/docs/images:/out" \
   -e PYTHONDONTWRITEBYTECODE=1 \
   flask-secrets-screenshots \
-  bash -c 'cp -r /repo /tmp/app && cd /tmp/app && rm -rf .venv framework && pip install -q . && python scripts/capture_screenshot.py "$@"' _ "$@"
+  bash /repo/scripts/capture_in_container.sh "$@"
