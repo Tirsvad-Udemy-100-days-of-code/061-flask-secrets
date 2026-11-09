@@ -21,7 +21,7 @@ The site asks for an email and a password. The demo account of the lecture (`adm
 
 | Folder | Purpose |
 | --- | --- |
-| `src/flask_secrets/` | The application: `constants.py`, and the `presentation` layer with the routes `home` and `login`, the `LoginForm` and the templates |
+| `src/flask_secrets/` | The application: `constants.py` and the layers `domain` (the credentials rule), `application` (the `authenticate_user` use case) and `presentation` (routes `home` and `login`, the `LoginForm`, templates) |
 | `tests/` | pytest tests |
 | `docs/` | Project documents, screenshots (`docs/images/`) and the plan |
 
@@ -42,6 +42,20 @@ Every screenshot is taken in a Docker container by `scripts/capture_screenshot.s
 **Step 3: five code improvements.** A `PasswordField` hides the typed text, labels use the `label` keyword, the form action uses `url_for`, a table lays out the fields and a `SubmitField` renders the button.
 
 ![Step 3: code improvements](./docs/images/step-03-code-improvements.png)
+
+**Step 4: required fields.** `DataRequired` validators, `novalidate` on the form (so every browser shows our errors) and `validate_on_submit()` in the route. Submitting empty fields shows an error for each.
+
+![Step 4: required validation](./docs/images/step-04-required-validation.png)
+
+**Step 5: email and length validation.** The `Email` validator (it needs the `email-validator` package) and `Length(min=8)` for the password.
+
+![Step 5: email and length validation](./docs/images/step-05-email-and-length-validation.png)
+
+**Step 6: check the credentials.** The valid demo account (`admin@email.com` / `12345678`) gets `success.html`; everything else gets `denied.html`.
+
+![Step 6: success page](./docs/images/step-06-success.png)
+
+![Step 6: denied page](./docs/images/step-06-denied.png)
 
 ## 📋 Requirements
 

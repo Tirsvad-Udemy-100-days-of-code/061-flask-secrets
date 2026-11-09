@@ -90,3 +90,19 @@ def test_valid_input_shows_no_validation_error(client: FlaskClient) -> None:
     data = {"email": "admin@email.com", "password": "12345678"}
     html = client.post("/login", data=data).get_data(as_text=True)
     assert "color: red" not in html
+
+
+def test_demo_account_sees_the_secret_page(client: FlaskClient) -> None:
+    """@brief The right credentials show the success page."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "admin@email.com", "password": "12345678"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "<h1>Top Secret</h1>" in html
+
+
+def test_other_credentials_see_access_denied(client: FlaskClient) -> None:
+    """@brief Valid but wrong credentials show the denied page."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "user@email.com", "password": "87654321"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "<h1>Access Denied</h1>" in html

@@ -36,5 +36,39 @@
         "click": "#submit"
       }
     ]
+  },
+  {
+    "name": "step-06-success",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "admin@email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "12345678"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
+  },
+  {
+    "name": "step-06-denied",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "user@email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "87654321"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
   }
 ]

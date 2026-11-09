@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template
 
+from flask_secrets.application.use_cases.authenticate_user import authenticate_user
 from flask_secrets.constants import INPUT_SIZE
 from flask_secrets.presentation.features.login.login_view_model import LoginForm
 
@@ -15,12 +16,15 @@ def home() -> str:
 
 
 def login() -> str:
-    """@brief Show the login form and validate what the user submits (step 4).
+    """@brief Show the login form, then accept or deny a valid submit (step 6).
 
-    @return The HTML of login.html, with validation errors after a failed submit.
+    @return login.html, or success.html or denied.html after a valid submit.
     """
     form = LoginForm()
-    form.validate_on_submit()
+    if form.validate_on_submit():
+        if authenticate_user(form.email.data or "", form.password.data or ""):
+            return render_template("success.html")
+        return render_template("denied.html")
     return render_template("login.html", form=form, input_size=INPUT_SIZE)
 
 
