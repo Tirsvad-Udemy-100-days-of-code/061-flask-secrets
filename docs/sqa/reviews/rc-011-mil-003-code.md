@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-09 | Proposed | <author> | AI as stand-in for S01 | Code review of MIL-003 | [1305754] |
+| 2026-11-09 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Code review of MIL-003 | [1305754] |
 
 ---
 
