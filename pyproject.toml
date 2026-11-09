@@ -17,13 +17,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff", "mypy"]
+dev = ["pytest", "ruff", "mypy", "types-WTForms"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-flask_secrets = ["templates/*.html"]
+flask_secrets = ["presentation/templates/*.html"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -43,3 +43,7 @@ ignore = ["D203", "D213", "D212", "D415"]
 [tool.mypy]
 strict = true
 mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["flask_wtf", "flask_wtf.*", "flask_bootstrap", "flask_bootstrap.*"]
+ignore_missing_imports = true

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="{{ url_for('login') }}" method="post">
+        {{ form.csrf_token }}
+        <table>
+            <tr>
+                <td>{{ form.email.label }}</td>
+                <td>{{ form.email(size=input_size) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label }}</td>
+                <td>{{ form.password(size=input_size) }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{ form.submit() }}</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
