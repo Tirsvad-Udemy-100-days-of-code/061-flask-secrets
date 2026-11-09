@@ -24,7 +24,7 @@ Every pull request was merged through the host's API after its three checks (Val
 | RC-003 | Project Plan | Go |
 | RC-004 to RC-008 | Milestones MIL-001 to MIL-005 | Go |
 | RC-009 to RC-012 | Code of MIL-001 to MIL-004 against QC-PY-001 | Go |
-| RC-013 | Wiki against QC-WIKI-001 and QC-LANG-001 | Go-with-conditions |
+| RC-013 | Wiki against QC-WIKI-001 and QC-LANG-001 | Go |
 
 ## Stand-in decisions
 
@@ -36,7 +36,7 @@ Every pull request was merged through the host's API after its three checks (Val
 
 ## What was stopped on or left open
 
-- **Wiki language review (open, conditions of RC-013).** The Danish and Bahasa Malaysia pages were written by the AI. S01 should read the Danish pages, and a reader of Bahasa Malaysia should confirm the Malay pages; no such reader is named in the Stakeholder Analysis.
+- **Wiki language review (closed).** The Danish and Bahasa Malaysia pages were written by the AI. S01 confirmed them in chat on 2026-11-09 ("pages are fine"); no separate Malay reader is named in the Stakeholder Analysis, so the Malay confirmation rests on S01 alone.
 - No stop condition of the autonomous mode was reached: no force push, no history rewrite, no secret printed, no destructive action.
 
 ## Notable events and deviations
