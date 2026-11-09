@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-09 | Proposed | <author> | AI as stand-in for S01 | Review of the project wiki | pending |
+| 2026-11-09 | Proposed | <author> | AI as stand-in for S01 | Review of the project wiki | [733a36b] |
 
 ---
 
@@ -66,3 +66,4 @@ Go-with-conditions: all Mandatory structure criteria pass. Criterion 14 and QC-L
 
 [QC-WIKI-001]: ../../../framework/qc/artifacts/qc-wiki.md
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
+[733a36b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/733a36b1aceaf0574be7062bba541a75c7677c2b
