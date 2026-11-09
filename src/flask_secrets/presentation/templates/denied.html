@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Access Denied</title>
-</head>
-<body>
-    <h1>Access Denied</h1>
-    <p>Wrong email or password. <a href="{{ url_for('login') }}">Try again</a>.</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Access Denied{% endblock %}
+{% block content %}
+<h1 class="display-4 text-danger">Access Denied</h1>
+<p class="lead">Wrong email or password. <a href="{{ url_for('login') }}">Try again</a>.</p>
+{% endblock %}

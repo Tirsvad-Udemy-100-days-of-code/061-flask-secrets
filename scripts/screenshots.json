@@ -70,5 +70,69 @@
         "click": "#submit"
       }
     ]
+  },
+  {
+    "name": "step-07-base-template",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "admin@email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "12345678"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
+  },
+  {
+    "name": "step-08-super-block",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "user@email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "87654321"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
+  },
+  {
+    "name": "step-09-bootstrap-flask",
+    "path": "/login",
+    "actions": [
+      {
+        "click": "#submit"
+      }
+    ]
+  },
+  {
+    "name": "step-09-bootstrap-home",
+    "path": "/"
+  },
+  {
+    "name": "step-10-render-form",
+    "path": "/login",
+    "actions": [
+      {
+        "fill": "#email",
+        "value": "admin.email.com"
+      },
+      {
+        "fill": "#password",
+        "value": "1234"
+      },
+      {
+        "click": "#submit"
+      }
+    ]
   }
 ]

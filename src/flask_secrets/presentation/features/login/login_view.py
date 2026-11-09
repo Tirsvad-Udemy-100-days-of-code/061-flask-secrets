@@ -3,7 +3,6 @@
 from flask import Flask, render_template
 
 from flask_secrets.application.use_cases.authenticate_user import authenticate_user
-from flask_secrets.constants import INPUT_SIZE
 from flask_secrets.presentation.features.login.login_view_model import LoginForm
 
 
@@ -25,7 +24,7 @@ def login() -> str:
         if authenticate_user(form.email.data or "", form.password.data or ""):
             return render_template("success.html")
         return render_template("denied.html")
-    return render_template("login.html", form=form, input_size=INPUT_SIZE)
+    return render_template("login.html", form=form)
 
 
 def register_routes(app: Flask) -> None:

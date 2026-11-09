@@ -57,6 +57,24 @@ Every screenshot is taken in a Docker container by `scripts/capture_screenshot.s
 
 ![Step 6: denied page](./docs/images/step-06-denied.png)
 
+**Step 7: template inheritance.** `base.html` has `title` and `content` blocks; the success and denied pages extend it.
+
+![Step 7: base template](./docs/images/step-07-base-template.png)
+
+**Step 8: super blocks.** `base.html` has a `styling` block (purple background). The denied page calls `{{ super() }}` and adds a red heading. (This step is replaced by Bootstrap in step 9; the screenshot shows how it looked.)
+
+![Step 8: super block](./docs/images/step-08-super-block.png)
+
+**Step 9: Bootstrap-Flask.** `Bootstrap5(app)` is initialised, `base.html` loads the Bootstrap CSS and every page extends it. The Bootstrap files are served from this site, not from a CDN.
+
+![Step 9: login page with Bootstrap](./docs/images/step-09-bootstrap-flask.png)
+
+![Step 9: home page with Bootstrap](./docs/images/step-09-bootstrap-home.png)
+
+**Step 10: `render_form`.** One line, `render_form(form)`, replaces the hand-written form and also shows the validation errors.
+
+![Step 10: render_form](./docs/images/step-10-render-form.png)
+
 ## 📋 Requirements
 
 - Python 3.13 or newer.

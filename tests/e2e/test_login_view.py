@@ -23,7 +23,7 @@ def test_login_route_renders_login_page(client: FlaskClient) -> None:
     """@brief GET /login answers 200 and shows the login heading."""
     response = client.get("/login")
     assert response.status_code == 200
-    assert b"<h1>Login</h1>" in response.data
+    assert b"Login</h1>" in response.data
 
 
 def test_login_form_has_csrf_token(client: FlaskClient) -> None:
@@ -47,7 +47,7 @@ def test_password_input_hides_typed_text(client: FlaskClient) -> None:
 def test_form_action_is_built_with_url_for(client: FlaskClient) -> None:
     """@brief The form posts to the URL of the login endpoint."""
     html = client.get("/login").get_data(as_text=True)
-    assert '<form action="/login" method="post" novalidate>' in html
+    assert '<form action="/login" method="post"' in html
 
 
 def test_submit_button_uses_its_label(client: FlaskClient) -> None:
@@ -97,7 +97,7 @@ def test_demo_account_sees_the_secret_page(client: FlaskClient) -> None:
     client.application.config["WTF_CSRF_ENABLED"] = False
     data = {"email": "admin@email.com", "password": "12345678"}
     html = client.post("/login", data=data).get_data(as_text=True)
-    assert "<h1>Top Secret</h1>" in html
+    assert "Top Secret</h1>" in html
 
 
 def test_other_credentials_see_access_denied(client: FlaskClient) -> None:
@@ -105,4 +105,48 @@ def test_other_credentials_see_access_denied(client: FlaskClient) -> None:
     client.application.config["WTF_CSRF_ENABLED"] = False
     data = {"email": "user@email.com", "password": "87654321"}
     html = client.post("/login", data=data).get_data(as_text=True)
-    assert "<h1>Access Denied</h1>" in html
+    assert "Access Denied</h1>" in html
+
+
+def test_result_pages_extend_the_base_template(client: FlaskClient) -> None:
+    """@brief Success and denied pages take their title from their own block."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    good = {"email": "admin@email.com", "password": "12345678"}
+    bad = {"email": "user@email.com", "password": "87654321"}
+    assert "<title>Success - Flask Secrets</title>" in client.post(
+        "/login", data=good
+    ).get_data(as_text=True)
+    assert "<title>Access Denied - Flask Secrets</title>" in client.post(
+        "/login", data=bad
+    ).get_data(as_text=True)
+
+
+def test_pages_load_bootstrap_css(client: FlaskClient) -> None:
+    """@brief Every page loads the Bootstrap stylesheet through Bootstrap-Flask."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    good = {"email": "admin@email.com", "password": "12345678"}
+    bad = {"email": "user@email.com", "password": "87654321"}
+    pages = [
+        client.get("/"),
+        client.get("/login"),
+        client.post("/login", data=good),
+        client.post("/login", data=bad),
+    ]
+    for response in pages:
+        assert "bootstrap" in response.get_data(as_text=True)
+
+
+def test_render_form_builds_a_bootstrap_form(client: FlaskClient) -> None:
+    """@brief render_form produces Bootstrap form controls and keeps the CSRF token."""
+    html = client.get("/login").get_data(as_text=True)
+    assert 'class="form-control"' in html
+    assert 'name="csrf_token"' in html
+    assert "novalidate" in html
+
+
+def test_render_form_shows_validation_errors(client: FlaskClient) -> None:
+    """@brief Errors found by the validators appear in the rendered form."""
+    client.application.config["WTF_CSRF_ENABLED"] = False
+    data = {"email": "admin.email.com", "password": "1234"}
+    html = client.post("/login", data=data).get_data(as_text=True)
+    assert "Invalid email address." in html

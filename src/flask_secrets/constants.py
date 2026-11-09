@@ -21,3 +21,6 @@ ADMIN_EMAIL: str = "admin@email.com"
 
 ## @brief Password of the demo account. Not a real credential.
 ADMIN_PASSWORD: str = "12345678"
+
+## @brief Serve the Bootstrap files from this site instead of a CDN.
+BOOTSTRAP_SERVE_LOCAL: bool = True
