@@ -25,7 +25,7 @@ The site asks for an email and a password. The demo account of the lecture (`adm
 | `tests/` | pytest tests |
 | `docs/` | Project documents, screenshots (`docs/images/`) and the plan |
 
-The wiki explains what each lecture step taught, in English, Danish and Bahasa Malaysia.
+The [wiki][wiki] explains what each lecture step taught, in English, Danish and Bahasa Malaysia. Its pages are in `docs/wiki/` and are published to the git host when they are merged.
 
 ### Lecture steps
 
@@ -146,6 +146,7 @@ See [LICENSE][license].
 
 [license]: ./LICENSE
 [repository]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets
+[wiki]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/wiki
 [documentation]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/wiki
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/issues
 [agents]: ./AGENTS.md

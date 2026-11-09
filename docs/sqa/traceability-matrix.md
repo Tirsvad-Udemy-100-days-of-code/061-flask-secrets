@@ -30,7 +30,7 @@ updated whenever an artifact instance is created or reviewed.
 | [MIL-002] | Milestone | en | it | [PP-001] | tasks of MIL-002 | [RC-005], [RC-010] |
 | [MIL-003] | Milestone | en | it | [PP-001] | tasks of MIL-003 | [RC-006], [RC-011] |
 | [MIL-004] | Milestone | en | it | [PP-001] | tasks of MIL-004 | [RC-007], [RC-012] |
-| [MIL-005] | Milestone | en | it | [PP-001] | tasks of MIL-005 | [RC-008] |
+| [MIL-005] | Milestone | en | it | [PP-001] | tasks of MIL-005 | [RC-008], [RC-013] |
 
 ## Concern Coverage
 
@@ -74,3 +74,4 @@ No use cases, design artifacts or test plans exist: the lecture tasks are plain 
 [RC-010]: ./reviews/rc-010-mil-002-code.md
 [RC-011]: ./reviews/rc-011-mil-003-code.md
 [RC-012]: ./reviews/rc-012-mil-004-code.md
+[RC-013]: ./reviews/rc-013-wiki.md
