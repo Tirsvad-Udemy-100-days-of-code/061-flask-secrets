@@ -23,7 +23,7 @@ def test_login_route_renders_login_page(client: FlaskClient) -> None:
     """@brief GET /login answers 200 and shows the login heading."""
     response = client.get("/login")
     assert response.status_code == 200
-    assert b"<h1>Login</h1>" in response.data
+    assert b"Login</h1>" in response.data
 
 
 def test_login_form_has_csrf_token(client: FlaskClient) -> None:
@@ -97,7 +97,7 @@ def test_demo_account_sees_the_secret_page(client: FlaskClient) -> None:
     client.application.config["WTF_CSRF_ENABLED"] = False
     data = {"email": "admin@email.com", "password": "12345678"}
     html = client.post("/login", data=data).get_data(as_text=True)
-    assert "<h1>Top Secret</h1>" in html
+    assert "Top Secret</h1>" in html
 
 
 def test_other_credentials_see_access_denied(client: FlaskClient) -> None:
@@ -105,7 +105,7 @@ def test_other_credentials_see_access_denied(client: FlaskClient) -> None:
     client.application.config["WTF_CSRF_ENABLED"] = False
     data = {"email": "user@email.com", "password": "87654321"}
     html = client.post("/login", data=data).get_data(as_text=True)
-    assert "<h1>Access Denied</h1>" in html
+    assert "Access Denied</h1>" in html
 
 
 def test_result_pages_extend_the_base_template(client: FlaskClient) -> None:
@@ -113,27 +113,24 @@ def test_result_pages_extend_the_base_template(client: FlaskClient) -> None:
     client.application.config["WTF_CSRF_ENABLED"] = False
     good = {"email": "admin@email.com", "password": "12345678"}
     bad = {"email": "user@email.com", "password": "87654321"}
-    assert "<title>Success</title>" in client.post("/login", data=good).get_data(
-        as_text=True
-    )
-    assert "<title>Access Denied</title>" in client.post("/login", data=bad).get_data(
-        as_text=True
-    )
+    assert "<title>Success - Flask Secrets</title>" in client.post(
+        "/login", data=good
+    ).get_data(as_text=True)
+    assert "<title>Access Denied - Flask Secrets</title>" in client.post(
+        "/login", data=bad
+    ).get_data(as_text=True)
 
 
-def test_denied_page_extends_the_styling_with_super(client: FlaskClient) -> None:
-    """@brief The denied page keeps the base styling and adds a red heading."""
+def test_pages_load_bootstrap_css(client: FlaskClient) -> None:
+    """@brief Every page loads the Bootstrap stylesheet through Bootstrap-Flask."""
     client.application.config["WTF_CSRF_ENABLED"] = False
-    data = {"email": "user@email.com", "password": "87654321"}
-    html = client.post("/login", data=data).get_data(as_text=True)
-    assert "background: purple;" in html
-    assert "color: red;" in html
-
-
-def test_success_page_has_the_base_styling_only(client: FlaskClient) -> None:
-    """@brief The success page uses the purple base styling without the red heading."""
-    client.application.config["WTF_CSRF_ENABLED"] = False
-    data = {"email": "admin@email.com", "password": "12345678"}
-    html = client.post("/login", data=data).get_data(as_text=True)
-    assert "background: purple;" in html
-    assert "color: red;" not in html
+    good = {"email": "admin@email.com", "password": "12345678"}
+    bad = {"email": "user@email.com", "password": "87654321"}
+    pages = [
+        client.get("/"),
+        client.get("/login"),
+        client.post("/login", data=good),
+        client.post("/login", data=bad),
+    ]
+    for response in pages:
+        assert "bootstrap" in response.get_data(as_text=True)

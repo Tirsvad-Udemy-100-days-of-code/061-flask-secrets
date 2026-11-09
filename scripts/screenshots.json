@@ -104,5 +104,18 @@
         "click": "#submit"
       }
     ]
+  },
+  {
+    "name": "step-09-bootstrap-flask",
+    "path": "/login",
+    "actions": [
+      {
+        "click": "#submit"
+      }
+    ]
+  },
+  {
+    "name": "step-09-bootstrap-home",
+    "path": "/"
   }
 ]

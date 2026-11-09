@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Flask Secrets</h1>
-    <p><a href="/login">Log in</a> to see the secret.</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <h1 class="display-4 fw-bold">Flask Secrets</h1>
+    <p class="lead">Only with the right email and password can you see the secret.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}">Log in</a>
+</div>
+{% endblock %}
