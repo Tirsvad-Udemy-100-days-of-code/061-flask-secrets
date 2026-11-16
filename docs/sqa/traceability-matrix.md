@@ -4,12 +4,13 @@
 | Key | Value |
 | --- | --- |
 | ID | TM-001 |
-| CrossReference | [BC-001] |
+| CrossReference | [BC-001], [SA-001], [PP-001], [MIL-006] |
 
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-09 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [1c70baa] |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added MIL-006 and its review records RC-014 to RC-017; set the domain of BC-001 and PP-001 to education; reviewed in autonomous mode, not independent | pending |
 
 ---
 
@@ -23,14 +24,15 @@ updated whenever an artifact instance is created or reviewed.
 
 | Artifact Instance | Type | Language | Domain | Upstream (Backward Link) | Downstream (Forward Link) | Last Reviewed (RC-ID) |
 | --- | --- | --- | --- | --- | --- | --- |
-| [BC-001] | Business Case | en | it | - | [SA-001], [PP-001] | [RC-001] |
+| [BC-001] | Business Case | en | education | - | [SA-001], [PP-001], [MIL-006] | [RC-014], [RC-001] |
 | [SA-001] | Stakeholder Analysis | en | it | [BC-001] | [PP-001] | [RC-002] |
-| [PP-001] | Project Plan | en | it | [BC-001], [SA-001] | MIL-001 to MIL-005 | [RC-003] |
+| [PP-001] | Project Plan | en | education | [BC-001], [SA-001] | MIL-001 to MIL-006 | [RC-015], [RC-003] |
 | [MIL-001] | Milestone | en | it | [PP-001] | tasks of MIL-001 | [RC-004], [RC-009] |
 | [MIL-002] | Milestone | en | it | [PP-001] | tasks of MIL-002 | [RC-005], [RC-010] |
 | [MIL-003] | Milestone | en | it | [PP-001] | tasks of MIL-003 | [RC-006], [RC-011] |
 | [MIL-004] | Milestone | en | it | [PP-001] | tasks of MIL-004 | [RC-007], [RC-012] |
-| [MIL-005] | Milestone | en | it | [PP-001] | tasks of MIL-005 | [RC-008], [RC-013] |
+| [MIL-005] | Milestone | en | it | [PP-001] | tasks of MIL-005, [MIL-006] | [RC-008], [RC-013] |
+| [MIL-006] | Milestone | en | education | [BC-001], [PP-001], [MIL-005] | tasks of MIL-006 | [RC-016], [RC-017] |
 
 ## Concern Coverage
 
@@ -50,6 +52,8 @@ None.
 ## Coverage Notes
 
 No use cases, design artifacts or test plans exist: the lecture tasks are plain technical tasks. `-` in Upstream means foundational; `-` in Decisions or Quality check means none exists.
+
+The domain of BC-001, PP-001 and MIL-006 is `education` since MIL-006; the other documents keep the domain `it` they were accepted with (see the Open Issues of PP-001). MIL-006 changes no source, test, screenshot or wiki file (its one change outside the documents is the user of the Dockerfile of the screenshot tool). The wiki is reviewed again in [RC-017] (it has no row of its own in this matrix, as before).
 
 ---
 
@@ -75,3 +79,8 @@ No use cases, design artifacts or test plans exist: the lecture tasks are plain 
 [RC-011]: ./reviews/rc-011-mil-003-code.md
 [RC-012]: ./reviews/rc-012-mil-004-code.md
 [RC-013]: ./reviews/rc-013-wiki.md
+[MIL-006]: ../milestones/mil-006-framework-baseline.md
+[RC-014]: ./reviews/rc-014-business-case-baseline.md
+[RC-015]: ./reviews/rc-015-project-plan-baseline.md
+[RC-016]: ./reviews/rc-016-milestone-006.md
+[RC-017]: ./reviews/rc-017-wiki-baseline.md
