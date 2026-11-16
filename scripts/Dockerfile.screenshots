@@ -1,3 +1,7 @@
 FROM python:3.13-slim
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 RUN pip install --no-cache-dir playwright==1.55.0 \
-    && playwright install --with-deps chromium
+    && playwright install --with-deps chromium \
+    && chmod -R a+rX /ms-playwright
+RUN useradd --create-home --uid 1000 app
+USER app
