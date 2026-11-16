@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial review record; verdict Go (autonomous, not independent) | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial review record; verdict Go (autonomous, not independent) | [fa57bad] |
 
 ---
 
@@ -57,3 +57,4 @@ Go — every Mandatory criterion passes. No wiki file changes in this milestone;
 
 [WIKI]: ../../wiki/
 [QC-WIKI-001]: ../../../framework/qc/artifacts/qc-wiki.md
+[fa57bad]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/fa57badd23f00f9605bb04b81cb5b75d44ed529c

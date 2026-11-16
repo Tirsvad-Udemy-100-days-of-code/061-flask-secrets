@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-09 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version for the Day 61 Flask Secrets project | [1c70baa] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 6, success criterion 7, a scope item, an out-of-scope item, a risk and two constraints for the baseline milestone MIL-006; set the domain to education; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 6, success criterion 7, a scope item, an out-of-scope item, a risk and two constraints for the baseline milestone MIL-006; set the domain to education; reviewed in autonomous mode, not independent | [fa57bad] |
 
 ---
 
@@ -143,3 +143,4 @@ Proceed — the scope is small, the quality gates are defined and the outcome se
 [SA-001]: ./stakeholder-analysis.md
 [PP-001]: ./project-plan.md
 [MIL-006]: ./milestones/mil-006-framework-baseline.md
+[fa57bad]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/fa57badd23f00f9605bb04b81cb5b75d44ed529c

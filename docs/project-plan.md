@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-09 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version for the Day 61 Flask Secrets project | [1c70baa] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the baseline gateway G6 (MIL-006) with its schedule row, scope coverage, dependency, risk and Gantt entries; recorded the move of the end date, the domain, the open pull request #31, the course demo values and the Dockerfile task in the Planning Assumptions and Open Issues; filled the empty milestone column of MIL-001 to MIL-005 with the links to the milestones on the git host; set the domain to education; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the baseline gateway G6 (MIL-006) with its schedule row, scope coverage, dependency, risk and Gantt entries; recorded the move of the end date, the domain, the open pull request #31, the course demo values and the Dockerfile task in the Planning Assumptions and Open Issues; filled the empty milestone column of MIL-001 to MIL-005 with the links to the milestones on the git host; set the domain to education; reviewed in autonomous mode, not independent | [fa57bad] |
 
 ---
 
@@ -107,3 +107,4 @@ A No-Go on a gateway stops the later ones until it is fixed and re-reviewed. The
 [ms-397]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/milestone/397
 [MIL-006]: ./milestones/mil-006-framework-baseline.md
 [ms-582]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/milestone/582
+[fa57bad]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/fa57badd23f00f9605bb04b81cb5b75d44ed529c

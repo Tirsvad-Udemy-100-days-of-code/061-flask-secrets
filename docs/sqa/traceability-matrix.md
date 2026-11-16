@@ -10,7 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-09 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [1c70baa] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added MIL-006 and its review records RC-014 to RC-017; set the domain of BC-001 and PP-001 to education; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added MIL-006 and its review records RC-014 to RC-017; set the domain of BC-001 and PP-001 to education; reviewed in autonomous mode, not independent | [fa57bad] |
 
 ---
 
@@ -84,3 +84,4 @@ The domain of BC-001, PP-001 and MIL-006 is `education` since MIL-006; the other
 [RC-015]: ./reviews/rc-015-project-plan-baseline.md
 [RC-016]: ./reviews/rc-016-milestone-006.md
 [RC-017]: ./reviews/rc-017-wiki-baseline.md
+[fa57bad]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/commit/fa57badd23f00f9605bb04b81cb5b75d44ed529c
