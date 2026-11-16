@@ -24,6 +24,10 @@ The site asks for an email and a password. The demo account of the lecture (`adm
 | `src/flask_secrets/` | The application: `constants.py` and the layers `domain` (the credentials rule), `application` (the `authenticate_user` use case) and `presentation` (routes `home` and `login`, the `LoginForm`, templates) |
 | `tests/` | pytest tests |
 | `docs/` | Project documents, screenshots (`docs/images/`) and the plan |
+| `scripts/` | The tool that takes the lecture screenshots in a Docker container |
+| `framework/` | The SQA and QC framework (a git submodule) that the project documents follow |
+| `.editorconfig` | The editor settings of the framework baseline |
+| `.env.example` | Placeholders for the git host tokens that the framework scripts read; the program itself reads no `.env` file, only the optional `SECRET_KEY` environment variable |
 
 The [wiki][wiki] explains what each lecture step taught, in English, Danish and Bahasa Malaysia. Its pages are in `docs/wiki/` and are published to the git host when they are merged.
 
@@ -120,7 +124,7 @@ python -m pytest
 
 ## 📄 License
 
-See [LICENSE][license].
+GNU Affero General Public License v3.0 only (AGPL-3.0-only), see the [LICENSE][license] file.
 
 ## 🔗 Links
 
@@ -132,15 +136,12 @@ See [LICENSE][license].
 
 | Document | What it tells you |
 | --- | --- |
-| [AGENTS.md][agents] | The rules AI agents follow in this repository |
 | [Business Case][BC-001] | Why the project exists, its scope and success criteria |
 | [Stakeholder Analysis][SA-001] | Who is involved; the stakeholder IDs used for owners and reviewers |
 | [Project Plan][PP-001] | The gateways and their schedule |
 | [Milestones][milestones] | One document per gateway: Go/No-Go criteria and tasks |
 | [Artifact registry][registry] | Where each artifact type lives, the next version, the PO language and domain |
 | [Traceability matrix][TM-001] | How the artifacts link and when each was last reviewed |
-| [Framework README][framework-readme] | The framework this project uses |
-| [Framework changelog][framework-changelog] | What changed in each framework release |
 
 ---
 
@@ -149,12 +150,9 @@ See [LICENSE][license].
 [wiki]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/wiki
 [documentation]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/wiki
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/issues
-[agents]: ./AGENTS.md
 [BC-001]: ./docs/business-case.md
 [SA-001]: ./docs/stakeholder-analysis.md
 [PP-001]: ./docs/project-plan.md
 [milestones]: ./docs/milestones/
 [registry]: ./docs/artifact-registry.md
 [TM-001]: ./docs/sqa/traceability-matrix.md
-[framework-readme]: ./framework/README.md
-[framework-changelog]: ./framework/CHANGELOG.md

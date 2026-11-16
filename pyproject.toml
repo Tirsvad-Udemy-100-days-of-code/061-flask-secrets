@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,13 +8,20 @@ version = "0.1.0"
 description = "Day 61 of 100 Days of Code: a Flask site with a Flask-WTF login form that guards a secret page."
 readme = "README.md"
 requires-python = ">=3.13"
-license = { file = "LICENSE" }
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [{ name = "Jens Tirsvad Nielsen" }]
 dependencies = [
     "Flask",
     "Flask-WTF",
     "email-validator",
     "Bootstrap-Flask",
 ]
+
+[project.urls]
+Repository = "https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets"
+Documentation = "https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/wiki"
+"Issue tracker" = "https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/061-flask-secrets/issues"
 
 [project.optional-dependencies]
 dev = ["pytest", "ruff", "mypy", "types-WTForms"]
